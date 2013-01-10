@@ -1,7 +1,10 @@
 /** 
- * @file lowpowermode.c
- * @brief  Testing the interupt to contol powerconsuption, 
- * @author Alexander Skoglund
+ * \file lowpowermode.c
+ * \brief  Testing the interupt to contol powerconsuption,
+ * \author Alex Skoglund
+ * \author Alexander Skoglund
+ * \version 0.02
+ * \copyright GNU Public License.
  * 
  * Testing the low power mode on the msp430 using an interupt.
  * Another meaningless line...
@@ -12,9 +15,9 @@
 #include <signal.h>
 
 void configureClocks();
-volatile unsigned int i;  // volatile to prevent optimization
+volatile unsigned int i;  /*!< volatile to prevent optimization */
 
-/** @brief Main loop, stop watchdog, set P1 and enter low power mode
+/** \brief Main loop, stop watchdog, set P1 and enter low power mode
  * 
  * The setup in main does the following 
  * Stop watchdog timer

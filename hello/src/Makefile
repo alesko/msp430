@@ -18,7 +18,7 @@ SOURCES = lowpowermode.c
 INCLUDES = -IInclude
 # Add or subtract whatever MSPGCC flags you want. There are plenty more
 #######################################################################################
-CFLAGS   = -mmcu=$(MCU) -g -Os -Wall -Wunused $(INCLUDES)   
+CFLAGS   = -mmcu=$(MCU) -g -Os -Wall -Wunused $(INCLUDES) 
 ASFLAGS  = -mmcu=$(MCU) -x assembler-with-cpp -Wa,-gstabs
 LDFLAGS  = -mmcu=$(MCU) -Wl,-Map=$(TARGET).map
 ########################################################################################
@@ -55,11 +55,11 @@ $(TARGET).elf: $(OBJECTS)
 %.txt: %.hex
 	$(MAKETXT) -O $@ -TITXT $< -I
 	unix2dos $(TARGET).txt
-	doxygen $(DOXYCONF)
 #  The above line is required for the DOS based TI BSL tool to be able to read the txt file generated from linux/unix systems.
 %.o: %.c
 	echo "Compiling $<"
 	$(CC) -c $(CFLAGS) -o $@ $<
+	doxygen $(DOXYCONF)	
 # rule for making assembler source listing, to see the code
 %.lst: %.c
 	$(CC) -c $(ASFLAGS) -Wa,-anlhd $< > $@
