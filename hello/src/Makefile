@@ -8,12 +8,12 @@
 # $(TARGET).elf $(TARGET).hex and $(TARGET).txt nad $(TARGET).map are all generated.
 # The TXT file is used for BSL loading, the ELF can be used for JTAG use
 # 
-TARGET     = lowpowermode
+TARGET     = lowpowermode  # hello
 MCU        = msp430g2553 # msp430f5529
 DOXYCONF   = lowpowermode.doxy
 # List all the source files here
 # eg if you have a source file foo.c then list it here
-SOURCES = lowpowermode.c
+SOURCES =   lowpowermode.c # hello.c
 # Include are located in the Include directory
 INCLUDES = -IInclude
 # Add or subtract whatever MSPGCC flags you want. There are plenty more
